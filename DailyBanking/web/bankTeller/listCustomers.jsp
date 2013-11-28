@@ -1,8 +1,7 @@
 <%@include file="../WEB-INF/jspf/header.jspf" %>
 
 
-<div id="main">
-
+<div id="main">    
     <table>
         <tr>
             <th>Customer ID</th>
@@ -10,6 +9,7 @@
             <th>Customer Email</th>
             <th></th>
         </tr>
+        
         <c:forEach var="customer" items="${customers}">
             <tr>
                 <td>${customer.customerId}</td>
@@ -23,4 +23,6 @@
 </div>
 
 
+    
+    
 <%@include file="../WEB-INF/jspf/footer.jspf" %>

@@ -7,11 +7,34 @@
                         lastName: {minlength: 2},
                         password: {minlength: 6},
                         email:{required: true, email: true, remote: "CheckEmailCommand"}
-                    },
+                    };
                 });
-                $.extend($.validator.messages, {remote: "This email is in use already"});
-            });
+                $.extend($.validator.messages, {remote: "This email is in use already"});   
+            
+            
+        });
+               
 </script>
+
+<script type="text/javascript">
+            $(document).ready(function(){
+                $("#getRating").click(function() {
+            $.ajax({
+                url: "CreditRating",
+                cache: false,
+                dataType: "text",
+                success: dateReady
+            });
+        });
+            
+        });
+        
+        function dateReady(data) {
+        $("#cr").html(data);
+    }
+               
+</script>
+
 <div id="main">
     <p id="username">${username} is currently logged in</p>
 
@@ -30,7 +53,10 @@
         <input type="hidden" name="command" value="addCustomer">
     </form>
 </div>
-    
+        
+        <div id="cr"></div>        
+        <button id="getRating">CreditRating for test@gmail.com</button>
+        
 </div>
 
 <%@include file="../WEB-INF/jspf/footer.jspf" %>

@@ -6,12 +6,14 @@ import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
 import servlets.Factory;
+import utils.CreditChecker;
 
 /**
  *
  * @author Aaron, Kris, Lars, Timea, @08/11/2013
  */
 public class ListAllBankAccountsCommand extends TargetCommand {
+
 
     public ListAllBankAccountsCommand(String target, String title, SecurityRole role) {
         super(target, title, role);
