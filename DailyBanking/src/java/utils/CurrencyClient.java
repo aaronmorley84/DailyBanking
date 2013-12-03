@@ -21,7 +21,7 @@ import javax.ws.rs.client.WebTarget;
 public class CurrencyClient {
     private WebTarget webTarget;
     private Client client;
-    private static final String BASE_URI = "http://localhost:19174/RESTcurrency/webresources";
+    private static final String BASE_URI = "http://localhost:8080/RESTcurrency/webresources";
 
     public CurrencyClient() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
