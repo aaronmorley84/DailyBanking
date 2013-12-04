@@ -8,14 +8,14 @@
 
 <script>
 $(document).ready(function() {
-    $("#getCubtn").click(function(){
+   // $("#getCubtn").click(function(){
         $.ajax({
             url: "CurrencyInfoServlet",
             cache: false,
             dataType: "text",
             success: getCurrencyInfo
         });
-    });
+   // });
     });
     function getCurrencyInfo(data) {
         $("#currencyinfo").html(data);
@@ -34,7 +34,7 @@ $(document).ready(function() {
         <div id='infoPanel'>
             <h3>Information</h3>
             <div id="currencyinfo"></div>
-            <button id="getCubtn">Get current currency rates</button>
+            <%--<button id="getCubtn">Get current currency rates</button>--%>
         </div>
     </div>
 </div>

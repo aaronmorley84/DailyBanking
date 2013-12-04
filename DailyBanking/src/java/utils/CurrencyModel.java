@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package utils;
 
 /**
@@ -11,5 +5,23 @@ package utils;
  * @author krismaini
  */
 public class CurrencyModel {
+    private String currency, iso;
+    private double rate;
+
+    public CurrencyModel() {
+    }
+
+    public  String getCurrency() {
+        return currency;
+    }
+
+    public  String getIso() {
+        return iso;
+    }
+
+    public  double getRate() {
+        return rate;
+    }
+    
     
 }

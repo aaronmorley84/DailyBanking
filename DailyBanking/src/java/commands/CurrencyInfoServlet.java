@@ -1,4 +1,5 @@
 package commands;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -8,7 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import utils.*;
+import utils.CurrencyModel;
+import utils.CurrencyClient;
 /**
  *
  * @author krismaini
@@ -16,13 +18,17 @@ import utils.*;
 @WebServlet(name = "CurrencyInfoServlet", urlPatterns = {"/CurrencyInfoServlet"})
 public class CurrencyInfoServlet extends HttpServlet {
     
+    CurrencyModel currencyMod;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
            
             throws ServletException, IOException {
-         CurrencyClient client = new CurrencyClient();
+         
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        
         try {
         
         List<String> currencies = new ArrayList<>();
@@ -36,15 +42,29 @@ public class CurrencyInfoServlet extends HttpServlet {
         
         out.println("<table>");
         for(String curr:currencies){
-            out.println("<tr><td>"+client.find_JSON(String.class, curr)+"</td></tr>");
+            printCurrency(curr);
+            out.println("<tr><td>"+currencyMod.getCurrency()+"</td>"
+                    +"<td>"+currencyMod.getIso()+"</td>"
+                    +"<td>"+currencyMod.getRate()+"</td>"+"</tr>");
+            System.out.println(currencyMod.getCurrency());
+            System.out.println(currencyMod.getIso());
+            System.out.println(currencyMod.getRate());
         }
         out.println("</table>");
-        client.close();
             
         } finally {
             out.close();
-            
         }
+    }
+    
+    public void printCurrency(String key){
+        CurrencyClient client = new CurrencyClient();
+        String jsonCurr = client.find_JSON(String.class, key);
+        System.out.println(jsonCurr);
+        Gson gson = new Gson();
+        this.currencyMod = gson.fromJson(jsonCurr, CurrencyModel.class);
+        
+        client.close();
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
