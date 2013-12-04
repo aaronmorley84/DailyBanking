@@ -7,7 +7,7 @@
 <%@include file="../WEB-INF/jspf/header.jspf"%>
 
 <script>
-    var ws = new WebSocket("ws://localhost:8080/DailyBankingBusinessDataBase/echo");
+    var ws = new WebSocket("ws://localhost:8080/DailyBanking/echo");
                 ws.onopen = function(evt)    { 
                     alert("Connection open ..."); 
                 }; 

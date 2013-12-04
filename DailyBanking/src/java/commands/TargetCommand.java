@@ -51,23 +51,28 @@ public class TargetCommand implements Command {
 
             //customer
             case "Customer Index":
-                nav = "<a id=\"activetab\">Menu</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                nav = "<a id=\"activetab\">Menu</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
                 break;
             case "Your Details":
-                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\"> Accounts</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\"> Accounts</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
                 break;
+            case "Chat":
+                nav ="<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\"> Accounts</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                break;
+                    
 //            case "Account Details":
 //                nav = "<a href=\"Controller?command=customerIndex&username=" + username + "\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&username=" + username + "&userid=" + userid + "\">Profile</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
 //                break;
             case "Your Account History":
-                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\">Back to Accounts</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\">Back to Accounts</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
                 break;
             case "Your Accounts":
-                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
                 break;
             case "Customer Transaction":
-                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\">Back to Accounts</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
+                nav = "<a href=\"Controller?command=customerIndex&custemail="+email+"\">Menu</a>\n<a href=\"Controller?command=customerViewDetails&custemail="+email+"\">Profile</a>\n<a href=\"Controller?command=customerViewAccounts&custemail="+email+"\">Back to Accounts</a>\n<a href=\"Controller?command=customerChatPage&custemail="+email+"\" target='_blank'>Chat</a>\n<a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>";
                 break;
+//                <a href=\"Controller?command=customerChatPage\">Chat</a>
                 
             //bankTeller
             case "Add Customer":
