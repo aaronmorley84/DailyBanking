@@ -26,7 +26,7 @@ import javax.ws.rs.client.WebTarget;
 public class KrackClient {
     private WebTarget webTarget;
     private Client client;
-    private static final String BASE_URI = "http://localhost:19174/KrakDemoShitCrap/webresources";
+    private static final String BASE_URI = "http://localhost:19174/KrakWebRest/webresources";
 
     public KrackClient() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
