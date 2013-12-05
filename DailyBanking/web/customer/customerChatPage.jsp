@@ -9,13 +9,13 @@
 <script>
     var ws = new WebSocket("ws://localhost:8080/DailyBanking/echo");
                 ws.onopen = function(evt)    { 
-                    $("#msgall").append("Connection open ..."); 
+                    $("#msgall").append("Connection open ..."+'\n'); 
                 }; 
                 ws.onmessage = function(evt) {
                     $("#msgall").append(evt.data+'\n');
                 }; 
                 ws.onclose = function(evt)   { 
-                    $("#msgall").append("Connection closed."); 
+                    $("#msgall").append("Connection closed."+'\n'); 
                 };
             $(document).ready(function(){
                 $("#btn").click(function(){
