@@ -61,6 +61,7 @@ public class Factory {
         commands.put("commitAddAccount", new CommitAddAccountCommand("/bankTeller/viewCustomer.jsp","View Customer",SecurityRole.BankTellers));
         commands.put("createTransfer", new CreateTransferCommand("/bankTeller/addTransfer.jsp","Create Transfer",SecurityRole.BankTellers));
         commands.put("commitTransfer", new CommitTransferCommand("/bankTeller/viewAccount.jsp","Account View",SecurityRole.BankTellers));
+        commands.put("bankTellerChatPage", new BankTellerChatCommand("/bankTeller/bankTellerChatPage.jsp","Chat",SecurityRole.BankTellers));
         
         //all mobile
         commands.put("mobileMain", new TargetCommand("/all/mobile/mobileMain.jsp", "Main Page",SecurityRole.All));

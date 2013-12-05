@@ -52,7 +52,7 @@ public class LoginCommand implements Command {
                     String curRole = ""+role;
                     if(curRole.equals("Customers")){
                         request.setAttribute("title", "Customer Index");
-                        request.setAttribute("navigation", "<a id=\"activetab\">Menu</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>");
+                        request.setAttribute("navigation", "<a id=\"activetab\">Menu</a>\n<a href=\"Controller?command=customerChatPage&custemail="+username+"\" target='_blank'>Chat</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>");
                         CustomerDTO cust = Factory.getInstance().getBankController().getCustomerByEmail(username);
                         request.setAttribute("customer", cust);
                        
@@ -61,7 +61,7 @@ public class LoginCommand implements Command {
                     if(curRole.equals("BankTellers")){
                         request.setAttribute("title", "BankTellers Menu");
                        
-                        request.setAttribute("navigation", "<a id=\"activetab\">Menu</a>\n <a href=\"Controller?lastName=&firstName=&email=&command=addCustomer&username="+username+"\">Add Customer</a>\n <a href=\"Controller?command=listCustomers\">Customers List</a>\n <a href=\"Controller?command=listAccounts\">Accounts List</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>");
+                        request.setAttribute("navigation", "<a id=\"activetab\">Menu</a>\n <a href=\"Controller?lastName=&firstName=&email=&command=addCustomer&username="+username+"\">Add Customer</a>\n <a href=\"Controller?command=listCustomers\">Customers List</a>\n <a href=\"Controller?command=listAccounts\">Accounts List</a>\n<a href=\"Controller?command=bankTellerChatPage&custemail="+username+"\" target='_blank'>Chat</a>\n <a id=\"logouttab\" href=\"Controller?command=logout\">Log Out</a>");
                         
                         UserDTO user = Factory.getInstance().getBankController().getUser(username);
                         request.setAttribute("userid", user.getId());

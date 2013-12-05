@@ -1,6 +1,6 @@
 <%-- 
     Document   : chatPage
-    Created on : Dec 3, 2013, 1:06:38 PM
+    Created on : Dec 3, 2013, 12:48:44 PM
     Author     : krismaini
 --%>
 
@@ -9,13 +9,13 @@
 <script>
     var ws = new WebSocket("ws://localhost:8080/DailyBanking/echo");
                 ws.onopen = function(evt)    { 
-                    alert("Connection open ..."); 
+                    $("#msgall").append("Connection open ..."+'\n'); 
                 }; 
                 ws.onmessage = function(evt) {
                     $("#msgall").append(evt.data+'\n');
                 }; 
                 ws.onclose = function(evt)   { 
-                    alert("Connection closed."); 
+                    $("#msgall").append("Connection closed."+'\n'); 
                 };
             $(document).ready(function(){
                 $("#btn").click(function(){
@@ -25,8 +25,8 @@
             });
 </script>
 
-<div>
-    <h2>Web socket test</h2>
+<div id="chatpanel">
+    <h2>Web socket test</h2><br>
     <textarea id='msgall' rows='10' cols="50"></textarea><br/>
     <input type="text" id='msgsend'><button id='btn'>Send</button>
 </div>

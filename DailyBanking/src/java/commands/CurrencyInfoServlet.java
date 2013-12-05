@@ -46,9 +46,6 @@ public class CurrencyInfoServlet extends HttpServlet {
             out.println("<tr><td>"+currencyMod.getCurrency()+"</td>"
                     +"<td>"+currencyMod.getIso()+"</td>"
                     +"<td>"+currencyMod.getRate()+"</td>"+"</tr>");
-            System.out.println(currencyMod.getCurrency());
-            System.out.println(currencyMod.getIso());
-            System.out.println(currencyMod.getRate());
         }
         out.println("</table>");
             
@@ -60,7 +57,6 @@ public class CurrencyInfoServlet extends HttpServlet {
     public void printCurrency(String key){
         CurrencyClient client = new CurrencyClient();
         String jsonCurr = client.find_JSON(String.class, key);
-        System.out.println(jsonCurr);
         Gson gson = new Gson();
         this.currencyMod = gson.fromJson(jsonCurr, CurrencyModel.class);
         
