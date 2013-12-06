@@ -16,8 +16,11 @@ public class EchoEndPoint {
     
    @OnMessage
    public void onMessage(Session session, String msg) {
+      
+      
       try {
           for(Session s : session.getOpenSessions()){
+    
          s.getBasicRemote().sendText(msg);
       }
          // Perhaps to get a list of all users: session.getOpenSessions()
@@ -25,8 +28,10 @@ public class EchoEndPoint {
       } catch (IOException e) {  
           System.out.println("Caught exception: "+e.getMessage());
       }
+     
    }
    
+
     
 }
 

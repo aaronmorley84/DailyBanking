@@ -16,18 +16,21 @@ import servlets.Factory;
  */
 @WebServlet(name = "CheckEmailCommand", urlPatterns = {"/CheckEmailCommand"})
 public class CheckEmailCommand extends HttpServlet{
-        
+    
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        
-        response.setContentType("text/html;charset=UTF-8");
+        String emailfree= "The email is already in use";
+        response.setContentType("text;charset=UTF-8");
         
         PrintWriter out = response.getWriter();
         String idAsstr= request.getParameter("email");
         String result = Factory.getInstance().getBankController().checkUserEmail(idAsstr);
-        System.out.println("check email result = "+result);
+        if(result.equals("true")){
+            emailfree="Available";
+        }
+    
         try{
-            out.print(result);
+            out.println(emailfree);
         } finally{
             out.close();
         }        

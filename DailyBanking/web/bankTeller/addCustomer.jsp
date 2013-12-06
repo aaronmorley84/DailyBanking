@@ -1,17 +1,30 @@
 <%@include file="../WEB-INF/jspf/header.jspf" %>
 <script type="text/javascript">
+    
             $(document).ready(function(){
-                $("#addCustForm").validate({
-                    rules: {
+               
+               
+               $("#addCustForm").validate({
+                 
+                        
+                        rules: {
                         firstName: {minlength: 2},
                         lastName: {minlength: 2},
                         password: {minlength: 6},
-                        email:{required: true, email: true, remote: "CheckEmailCommand"}
-                    }
-                        });
-                
-                $.extend($.validator.messages, {remote: "This email is in use already"});   
-            
+                        email:{required: true, email: true,remote:{
+                                url: "CheckEmailCommand",
+                                dataType:"text"
+                               
+                                                                   }
+                              }
+                               } 
+                       
+                    
+                       
+                                        });
+                                        
+                            
+        
             
                 $("#fillInAddress").click(function() {
                  $.ajax({
