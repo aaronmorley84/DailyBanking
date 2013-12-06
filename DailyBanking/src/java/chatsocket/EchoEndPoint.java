@@ -17,7 +17,9 @@ public class EchoEndPoint {
    @OnMessage
    public void onMessage(Session session, String msg) {
       try {
-         session.getBasicRemote().sendText(msg);
+          for(Session s : session.getOpenSessions()){
+         s.getBasicRemote().sendText(msg);
+      }
          // Perhaps to get a list of all users: session.getOpenSessions()
          // iterate over all open sessions and "session.getBasicRemote().sendText(msg);" to each
       } catch (IOException e) {  
