@@ -1,6 +1,7 @@
 <%@include file="../WEB-INF/jspf/header.jspf" %>
 
 <div id='main'>
+    <p id="username">${custemail} is currently logged in</p>
     
     <div id="basicPanel">
         <h3>Account Owner:&nbsp${account.owner.firstName}&nbsp${account.owner.lastName}</h3>

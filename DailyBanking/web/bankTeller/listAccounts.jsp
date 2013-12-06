@@ -19,6 +19,7 @@
 </script>
 
 <div id="main">
+    <p id="username">${custemail} is currently logged in</p>
 
     <table>
         <tr>

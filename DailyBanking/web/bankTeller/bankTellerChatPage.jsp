@@ -24,11 +24,14 @@
                 });
             });
 </script>
-
+<div id="main">
+    <p id="username">${custemail} is currently logged in</p>
+    
 <div id="chatpanel">
     <h2>Web socket test</h2><br>
     <textarea id='msgall' rows='10' cols="50"></textarea><br/>
     <input type="text" id='msgsend'><button id='btn'>Send</button>
 </div>
-
+    
+</div>
 <%@include file="../WEB-INF/jspf/footer.jspf" %>

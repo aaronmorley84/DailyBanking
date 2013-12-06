@@ -41,7 +41,7 @@
     </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>SecureReal</realm-name>
+        <realm-name>BankSecureReal</realm-name>
         <form-login-config>
             <form-login-page>/login/login.jsp</form-login-page>
             <form-error-page>/login/login.jsp</form-error-page>
